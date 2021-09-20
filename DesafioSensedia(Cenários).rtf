@@ -1,0 +1,201 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1046{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;\red255\green0\blue0;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang22\par
+\par
+
+\pard\sa200\sl276\slmult1\qc\b\fs28 Requisitos Funcionais\b0\fs22\par
+
+\pard\sa200\sl276\slmult1\b RF01 - ID001\b0\par
+Cen\'e1rio:\par
+- Obten\'e7\'e3o do Token de acesso\par
+Pr\'e9 Requisitos:\par
+- O usu\'e1rio deve possuir uma conta no Trello;\par
+Passos:\par
+- O usu\'e1rio deve acessar o site do Trello e se autenticar utilizando uma das op\'e7\'f5es de login;\par
+- O usu\'e1rio deve acessar o link {{\field{\*\fldinst{HYPERLINK https://trello.com/app-key }}{\fldrslt{https://trello.com/app-key\ul0\cf0}}}}\f0\fs22  para receber uma chave de acesso;\par
+- O usu\'e1rio deve selecionar o hyperlink "Token" logo abaixo da chave de acesso;\par
+- O usu\'e1rio deve autorizar que o Server Token leia e edite informa\'e7\'f5es da sua conta Trello, clicando no bot\'e3o Permitir;\par
+Resultado Esperado:\par
+- O usu\'e1rio se autentica com sucesso no site Trello;\par
+- O usu\'e1rio recebe a chave de acesso com sucesso;\par
+- O usu\'e1rio acessa o Server Token com sucesso;\par
+- O usu\'e1rio recebe a chave Token com sucesso;\par
+\par
+\b RF01 - ID002\b0\par
+Cen\'e1rio:\par
+- Obten\'e7\'e3o do Token de acesso com troca de conta\par
+Pr\'e9 Requisitos:\par
+- O usu\'e1rio deve possuir uma conta no Trello;\par
+Passos:\par
+- O usu\'e1rio deve acessar o site do Trello e se autenticar utilizando uma das op\'e7\'f5es de login;\par
+- O usu\'e1rio deve acessar o link {{\field{\*\fldinst{HYPERLINK https://trello.com/app-key }}{\fldrslt{https://trello.com/app-key\ul0\cf0}}}}\f0\fs22  para receber uma chave de acesso;\par
+- O usu\'e1rio deve selecionar o hyperlink "Token" logo abaixo da chave de acesso;\par
+- O usu\'e1rio percebe que n\'e3o est\'e1 na conta Trello que gostaria de utilizar e seleciona a op\'e7\'e3o "Trocar de Conta";\par
+- O usu\'e1rio se autentica na conta correta utilizando uma das op\'e7\'f5es de login;\par
+- O usu\'e1rio autoriza que o Server Token leia e edite informa\'e7\'f5es da nova conta Trello, clicando no bot\'e3o Permitir;\par
+Resultado Esperado:\par
+- O usu\'e1rio se autentica com sucesso no site Trello;\par
+- O usu\'e1rio recebe a chave de acesso com sucesso;\par
+- O usu\'e1rio acessa o Server Token com sucesso;\par
+- O altera a conta Trello com sucesso;\par
+- O usu\'e1rio recebe a chave Token com sucesso;\par
+\par
+\b RF01 - ID003\par
+\b0 Cen\'e1rio:\par
+- N\'e3o obten\'e7\'e3o de Token por falta de permiss\'e3o\par
+Pr\'e9 Requisitos:\par
+- O usu\'e1rio deve possuir uma conta no Trello;\par
+Passos:\par
+- O usu\'e1rio deve acessar o site do Trello e se autenticar utilizando uma das op\'e7\'f5es de login;\par
+- O usu\'e1rio deve acessar o link {{\field{\*\fldinst{HYPERLINK https://trello.com/app-key }}{\fldrslt{https://trello.com/app-key\ul0\cf0}}}}\f0\fs22  para receber uma chave de acesso;\par
+- O usu\'e1rio deve selecionar o hyperlink "Token" logo abaixo da chave de acesso;\par
+- O usu\'e1rio n\'e3o autoriza que o Server Token leia e edite informa\'e7\'f5es da sua conta Trello, clicando no bot\'e3o Negar;\par
+Resultado Esperado:\par
+- O usu\'e1rio se autentica com sucesso no site Trello;\par
+- O usu\'e1rio recebe a chave de acesso com sucesso;\par
+- O usu\'e1rio acessa o Server Token com sucesso;\par
+- O usu\'e1rio \'e9 direcionado para a tela inicial da sua conta Trello, sem receber a chave Token;\par
+\par
+\b RF01 - ID004\b0\par
+Cen\'e1rio:\par
+- N\'e3o obten\'e7\'e3o de Token por falta de autentica\'e7\'e3o pr\'e9via\par
+Pr\'e9 Requisitos:\par
+- O usu\'e1rio deve possuir uma conta no Trello;\par
+Passos:\par
+- O usu\'e1rio n\'e3o se autentica no site Trello;\par
+- O usu\'e1rio deve acessar o link {{\field{\*\fldinst{HYPERLINK https://trello.com/app-key }}{\fldrslt{https://trello.com/app-key\ul0\cf0}}}}\f0\fs22  para receber uma chave de acesso.\par
+Resultado Esperado:\par
+- O usu\'e1rio n\'e3o consegue acessar o link da Key e recebe a mensagem:\par
+"Oh no! 401! Taco says \ldblquote Not logged in\rdblquote , but what does he know? He's just a dog."\par
+\par
+\b RF02 - ID001\b0\par
+Cen\'e1rio:\par
+- Criar e Modificar a cor de um Card - Sem Quadro e Lista previamente criados\par
+Pr\'e9 Requisitos:\par
+- O usu\'e1rio deve possuir uma conta no Trello;\par
+- O usu\'e1rio deve possuir uma APIKey e um Token.\par
+Passos:\par
+- O usuario utiliza a API "Create a Board" passando nos Query Params, sua "APIKey" e "Token", pessoais, e o "Name" com o nome que deseja para o Quadro que ser\'e1 criado;\par
+- O usuario utiliza a API "Create a New List" passando nos Query Params, sua "APIKey" e Token", pessoais, o IdBoard (id do quadro que foi criado no step anterior) e o "Name" que deseja para a Lista que ser\'e1 criada;\par
+- O usuario utiliza a API "Create a new card" passando nos Query Params, sua "APIKey" e "Token", pessoais, o IdList (id da lista que foi criada no step anterior) e o "Name" = que deseja para o Card que ser\'e1 criado;\par
+- O usuario utiliza a API "Update a card" passando nos Query Params, sua "APIKey" e "Token", pessoais, e no "Cover" do Body a "Color" = "green".\par
+Resultado Esperado:\par
+- Ser\'e1 criado um Quadro, com o nome definido pelo usu\'e1rio,  dentro da conta Trello do dele;\par
+- Ser\'e1 criada uma Lista, com o nome definido pelo usu\'e1rio,  dentro do Quadro dele;\par
+- Ser\'e1 criado um Card, com o nome definido pelo usu\'e1rio, dentro da Lista dele;\par
+- O card ser\'e1 atualizado, recebendo a cor verde.\par
+\par
+\b RF02 - ID002\b0\par
+Cen\'e1rio:\par
+- Criar e Modificar a cor de um Card - Com Quadro e Lista j\'e1 existentes.\par
+Pr\'e9 Requisitos:\par
+- O usu\'e1rio deve possuir uma conta no Trello;\par
+- O usu\'e1rio deve possuir uma APIKey e um Token;\par
+- O usu\'e1rio deve possuir ao menos um Quadro com uma Lista no Trello.\par
+Passos:\par
+- O usuario utiliza a API "Get Boards" passando nos Query Params, sua "APIKey" e "Token", pessoais, para receber o Id do(s) Quadro(s) existente(s) em sua conta do Trello;\par
+- O usuario utiliza a API "Get Lists on a Board" passando na requisi\'e7\'e3o o ID do Quadro onde quer criar uma nova lista e nos Query Params, sua "APIKey" e "Token", pessoais, para receber o Id da(s) lista(s) existente(s) em seu Quadro;\par
+- O usuario utiliza a API "Create a new card" passando nos Query Params, sua "APIKey" e "Token", pessoais, o IdList (id de uma das listas que foram trazidas no step anterior) e o "Name" = que deseja para o Card que ser\'e1 criado;\par
+- O usuario utiliza a API "Update a card" passando nos Query Params, sua "APIKey" e "Token", pessoais, e no "Cover" do Body a "Color" = "green".\par
+Resultado Esperado:\par
+- Ser\'e3o trazidas informa\'e7\'f5es sobre os Quadros existente na conta Trello do Usu\'e1rio;\par
+- Ser\'e3o trazidas informa\'e7\'f5es sobre as listas existentes no Quadro selecionado, do usu\'e1rio;\par
+- Ser\'e1 criado um Card, com o nome definido pelo usu\'e1rio, dentro da Lista selecionada por ele;\par
+- O card ser\'e1 atualizado, recebendo a cor verde.\par
+\par
+\b RF02 - ID003\par
+\b0 Cen\'e1rio:\par
+- Falha ao Criar Card por falta de parametro obrigat\'f3rio (idList)\par
+Pr\'e9 Requisitos:\par
+- O usu\'e1rio deve possuir uma conta no Trello;\par
+- O usu\'e1rio deve possuir uma APIKey e um Token;\par
+- O usu\'e1rio deve possuir ao menos um Quadro com uma Lista no Trello.\par
+Passos:\par
+- O usuario utiliza a API "Get Boards" passando nos Query Params, sua "APIKey" e "Token", pessoais, para receber o Id do(s) Quadro(s) existente(s) em sua conta do Trello;\par
+- O usuario utiliza a API "Get Lists on a Board" passando na requisi\'e7\'e3o o ID do Quadro onde quer criar uma nova lista e nos Query Params, sua "APIKey" e "Token", pessoais, para receber o Id da(s) lista(s) existente(s) em seu Quadro;\par
+- O usuario utiliza a API "Create a new card" passando nos Query Params, sua "APIKey" e "Token", pessoais, o "Name" = que deseja para o Card que ser\'e1 criado e \b n\'e3o\b0  passa o IdList.\par
+Resultado Esperado:\par
+- Ser\'e3o trazidas informa\'e7\'f5es sobre os Quadros existente na conta Trello do Usu\'e1rio;\par
+- Ser\'e3o trazidas informa\'e7\'f5es sobre as listas existentes no Quadro selecionado, do usu\'e1rio;\par
+- O Card n\'e3o ser\'e1 criado, a API trar\'e1 o retorno "400 Bad Request" e a mensagem "invalid value for idList"\par
+\cf2\par
+\cf0\b RF02 - ID004\par
+\b0 Cen\'e1rio:\par
+- Falha o modificar a cor de um card por par\'e2metro invalido\par
+Pr\'e9 Requisitos:\par
+- O usu\'e1rio deve possuir uma conta no Trello;\par
+- O usu\'e1rio deve possuir uma APIKey e um Token;\par
+- O usu\'e1rio deve possuir ao menos um Quadro com uma Lista no Trello.\par
+Passos:\par
+- O usuario utiliza a API "Get Boards" passando nos Query Params, sua "APIKey" e "Token", pessoais, para receber o Id do(s) Quadro(s) existente(s) em sua conta do Trello;\par
+- O usuario utiliza a API "Get Lists on a Board" passando na requisi\'e7\'e3o o ID do Quadro onde quer criar uma nova lista e nos Query Params, sua "APIKey" e "Token", pessoais, para receber o Id da(s) lista(s) existente(s) em seu Quadro;\par
+- O usuario utiliza a API "Create a new card" passando nos Query Params, sua "APIKey" e "Token", pessoais, o IdList (id de uma das listas que foram trazidas no step anterior) e o "Name" = que deseja para o Card que ser\'e1 criado;\par
+- O usuario utiliza a API "Update a card" passando nos Query Params, sua "APIKey" e "Token", pessoais, e no "Cover" do Body a "Color" = "gold".\par
+Resultado Esperado:\par
+- Ser\'e3o trazidas informa\'e7\'f5es sobre os Quadros existente na conta Trello do Usu\'e1rio;\par
+- Ser\'e3o trazidas informa\'e7\'f5es sobre as listas existentes no Quadro selecionado, do usu\'e1rio;\par
+- Ser\'e1 criado um Card, com o nome definido pelo usu\'e1rio, dentro da Lista selecionada por ele;\par
+- O card n\'e3o ser\'e1 atualizado, pois a cor "gold" n\'e3o \'e9 valida, recebendo o retorno "400 Bad Request" e a mensagem "invalid cover color".\par
+\cf2\par
+\cf0\b RF03 - ID001\b0\par
+Cen\'e1rio:\par
+- Exclus\'e3o de Card\par
+Pr\'e9 Requisitos:\par
+- O usu\'e1rio deve possuir uma contra no Trello;\par
+- O usu\'e1rio deve possuir uma APIKey e um Token;\par
+- O usu\'e1rio deve deve possuir pelo menos um Quadro, Lista e Card no Trello.\par
+Passos:\par
+- O usuario utiliza a API "Get Boards" passando nos Query Params, sua "APIKey" e "Token", pessoais, para receber o Id do(s) Quadro(s) existente(s) em sua conta do Trello;\par
+- O usuario utiliza a API "Get Lists on a Board" passando na requisi\'e7\'e3o o ID de um dos Quadros existentes na conta do Trello, e nos Query Params, sua "APIKey" e "Token", pessoais, para receber o Id da(s) lista(s) existente(s) nesse quadro;\par
+- O usuario utiliza a API "Get Cards in a List" passando na requisi\'e7\'e3o o ID de uma das Listas existentes no Quadro, e nos Query Params, sua "APIKey" e "Token", pessoais, para receber o Id do(s) card(s) existente(s) nessa lista;\par
+- O usuario utiliza a API "Delete a card" passando na requisi\'e7\'e3o o Id do card que deve ser excluido e, nos Query Params, sua "APIKey" e "Token", pessoais.\par
+Resultado Esperado:\par
+- Ser\'e3o trazidas informa\'e7\'f5es sobre os Quadros existente na conta Trello do Usu\'e1rio;\par
+- Ser\'e3o trazidas informa\'e7\'f5es sobre as listas existentes no Quadro selecionado, do usu\'e1rio;\par
+- Ser\'e3o trazidas informa\'e7\'f5es sohbre os Cards existentes na Lista selecionada, do usu\'e1rio;\par
+- O Card indicado pelo usu\'e1rio ser\'e1 excluido e n\'e3o est\'e1 mais dispon\'edvel dentro da Lista selecionada por ele.\par
+\par
+\b RF03 - ID002\b0\par
+Cen\'e1rio:\par
+- Exclus\'e3o duplicada de Card\par
+Pr\'e9 Requisitos:\par
+- O usu\'e1rio deve possuir uma contra no Trello;\par
+- O usu\'e1rio deve possuir uma APIKey e um Token;\par
+- O usu\'e1rio deve deve possuir pelo menos um Quadro, Lista e Card no Trello.\par
+Passos:\par
+- O usuario utiliza a API "Get Boards" passando nos Query Params, sua "APIKey" e "Token", pessoais, para receber o Id do(s) Quadro(s) existente(s) em sua conta do Trello;\par
+- O usuario utiliza a API "Get Lists on a Board" passando na requisi\'e7\'e3o o ID de um dos Quadros existentes na conta do Trello, e nos Query Params, sua "APIKey" e "Token", pessoais, para receber o Id da(s) lista(s) existente(s) nesse quadro;\par
+- O usuario utiliza a API "Get Cards in a List" passando na requisi\'e7\'e3o o ID de uma das Listas existentes no Quadro, e nos Query Params, sua "APIKey" e "Token", pessoais, para receber o Id do(s) card(s) existente(s) nessa lista;\par
+- O usuario utiliza a API "Delete a card" passando na requisi\'e7\'e3o o Id do card que deve ser excluido e, nos Query Params, sua "APIKey" e "Token", pessoais;\par
+- O usuario utiliza a API "Delete a card", passando na requisi\'e7\'e3o novamente o Id do \'faltimo card excluido e, nos Query Params, sua "APIKey" e "Token", pessoais.\par
+Resultado Esperado:\par
+- Ser\'e3o trazidas informa\'e7\'f5es sobre os Quadros existente na conta Trello do Usu\'e1rio;\par
+- Ser\'e3o trazidas informa\'e7\'f5es sobre as listas existentes no Quadro selecionado, do usu\'e1rio;\par
+- Ser\'e3o trazidas informa\'e7\'f5es sohbre os Cards existentes na Lista selecionada, do usu\'e1rio;\par
+- O Card indicado pelo usu\'e1rio ser\'e1 excluido e n\'e3o est\'e1 mais dispon\'edvel dentro da Lista selecionada por ele;\par
+- N\'e3o ser\'e1 poss\'edvel localizar o card que deve ser exclu\'eddo e ser\'e1 apresentado o retorno 404  Not Found e a mensagem "The requested resource was not found."\par
+\par
+\b RF03 - ID003\par
+\b0 Cen\'e1rio:\par
+- Exclus\'e3o de Card n\'e3o autorizada por falta de permiss\'e3o (Token)\par
+Pr\'e9 Requisitos:\par
+- O usu\'e1rio deve possuir uma contra no Trello;\par
+- O usu\'e1rio deve possuir uma APIKey e um Token;\par
+- O usu\'e1rio deve deve possuir pelo menos um Quadro, Lista e Card no Trello.\par
+Passos:\par
+- O usuario utiliza a API "Get Boards" passando nos Query Params, sua "APIKey" e "Token", pessoais, para receber o Id do(s) Quadro(s) existente(s) em sua conta do Trello;\par
+- O usuario utiliza a API "Get Lists on a Board" passando na requisi\'e7\'e3o o ID de um dos Quadros existentes na conta do Trello, e nos Query Params, sua "APIKey" e "Token", pessoais, para receber o Id da(s) lista(s) existente(s) nesse quadro;\par
+- O usuario utiliza a API "Get Cards in a List" passando na requisi\'e7\'e3o o ID de uma das Listas existentes no Quadro, e nos Query Params, sua "APIKey" e "Token", pessoais, para receber o Id do(s) card(s) existente(s) nessa lista;\par
+- O usuario utiliza a API "Delete a card" passando na requisi\'e7\'e3o o Id do card que deve ser excluido e, nos Query Params, sua "APIKey" e "Token", pessoais;\par
+- O usuario utiliza a API "Delete a card", passando na requisi\'e7\'e3o novamente o Id do \'faltimo card excluido e, nos Query Params, apenas sua "APIKey", pessoal.\par
+Resultado Esperado:\par
+- Ser\'e3o trazidas informa\'e7\'f5es sobre os Quadros existente na conta Trello do Usu\'e1rio;\par
+- Ser\'e3o trazidas informa\'e7\'f5es sobre as listas existentes no Quadro selecionado, do usu\'e1rio;\par
+- Ser\'e3o trazidas informa\'e7\'f5es sohbre os Cards existentes na Lista selecionada, do usu\'e1rio;\par
+- A exclus\'e3o do card indicado n\'e3o ser\'e1 realizada, a API trar\'e1 o retorno "401 Unauthorized" e a mensagem "unauthorized card permission requested".\par
+\par
+\par
+\par
+}
+ 
